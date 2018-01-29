@@ -7,7 +7,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ClubsService } from './clubs.service';
+import { LocalStorageService } from './local-storage.service';
 import { ClubsComponent } from './clubs/clubs.component';
+import { Club } from './club';
 
 const appRoutes: Routes = [
   {
@@ -30,9 +32,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     HttpModule,
-    RouterModule
+    RouterModule,
   ],
-  providers: [ClubsService, HttpClient],
+  providers: [ClubsService, HttpClient, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

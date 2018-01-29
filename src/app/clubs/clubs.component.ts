@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ClubsService } from '../clubs.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Club } from '../club';
 
 @Component({
   selector: 'app-clubs',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClubsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
+ 
   ngOnInit() {
+    //
   }
 
 }
