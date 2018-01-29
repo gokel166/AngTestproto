@@ -7,15 +7,24 @@ import { Club } from '../club';
 @Component({
   selector: 'app-clubs',
   templateUrl: './clubs.component.html',
-  styleUrls: ['./clubs.component.css']
+  styleUrls: ['./clubs.component.css'],
+  providers: [ClubsService]
 })
 export class ClubsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  _clubArray: Club[];
 
- 
+  constructor(private clubsService: ClubsService) { }
+
+  getClubsInfo(): void {
+    this.clubsService.getClubdata().subscribe(
+      resultArray => this._clubArray = resultArray,
+      error => console.log("Error :: " + error)
+    )
+  }
+
   ngOnInit() {
-    //
+    this.getClubsInfo();
   }
 
 }

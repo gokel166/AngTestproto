@@ -8,7 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class ClubsService {
 
-  private _assetURL = "../assets/color.json";
+  private _assetURL = "../assets/colors.json";
 
   constructor(private http: Http) { }
 
